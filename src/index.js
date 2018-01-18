@@ -5,11 +5,13 @@ import { AppContainer } from 'react-hot-loader';
 import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
 import {getHeroes} from './actions/heroesActions';
+import {updateProgress} from './actions/progressActions';
 import './styles/styles.scss';
 require('./favicon.ico');
 
 const store = configureStore();
 store.dispatch(getHeroes());
+store.dispatch(updateProgress());
 
 render(
   <AppContainer>

@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux';
 import * as heroesActions from '../../actions/heroesActions';
 // import heroes from '../../api/heroesDb';
 import HeroesDisplay from '../Heroes/HeroesDisplay';
+import ProgressDisplay from '../Progress/ProgressDisplay';
 
 class HomePage extends Component {
   constructor(props, context) {
@@ -15,9 +16,11 @@ class HomePage extends Component {
     const {heroes} = this.props;
 
     return (
-      <div>
+      <div className="container">
         <h1>Heroes</h1>
-          <HeroesDisplay heroes={heroes} />
+        <HeroesDisplay heroes={heroes} />
+        <h1>Progress</h1>
+        <ProgressDisplay />
       </div>
     );
   }

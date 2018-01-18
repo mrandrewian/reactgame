@@ -1,3 +1,5 @@
 export default {
-  heroes: []
+  heroes: [],
+  progress: 0,
+  worldTime: 0
 };

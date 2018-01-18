@@ -6,8 +6,8 @@ const Header = () => {
   return (
     <header className="main-header">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul id="main-nav" className="nav nav-pills">
+        <div className="collapse navbar-collapse container" id="navbarNav">
+          <ul id="main-nav" className="nav nav-tabs">
             <li className="nav-item">
               <NavLink className="nav-link" exact to="/" activeStyle={activeStyle}>Home</NavLink>
             </li>

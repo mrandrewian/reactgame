@@ -17,7 +17,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <div className="container-fluid">
+        <div className="container">
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/stats" component={StatsPage} />
