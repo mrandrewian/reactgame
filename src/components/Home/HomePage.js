@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as heroesActions from '../../actions/heroesActions';
 // import heroes from '../../api/heroesDb';
+import BootyDisplay from '../Booty/BootyDisplay';
 import HeroesDisplay from '../Heroes/HeroesDisplay';
 import ProgressDisplay from '../Progress/ProgressDisplay';
 
@@ -17,6 +18,8 @@ class HomePage extends Component {
 
     return (
       <div className="container">
+        <h1>Booty</h1>
+        <BootyDisplay />
         <h1>Heroes</h1>
         <HeroesDisplay heroes={heroes} />
         <h1>Progress</h1>

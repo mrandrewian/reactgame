@@ -5,7 +5,7 @@ export default function worldTimeReducer(state = initialState.worldTime, action)
 
   switch(action.type) {
     case TICK_WORLDTIME:
-      return state + 5;
+      return state + 1;
     default:
       return state;
   }

@@ -13,15 +13,23 @@ class ProgressDisplay extends React.Component {
     const {progress} = this.props;
 
     return (
-      <div className="progress">
-        <div className="progress-bar" role="progressbar" style={{width: progress+'%'}} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100" />
+      <div>
+        <div className="progress">
+          <div className="progress-bar bg-info" role="progressbar" style={{width: progress.current +'%'}} aria-valuenow={progress.current} aria-valuemin="0" aria-valuemax="100" />
+          <div className="progress-bar bg-success" role="progressbar" style={{width: progress.current +'%'}} aria-valuenow={progress.current} aria-valuemin="0" aria-valuemax="100" />
+          <div className="progress-bar bg-danger" role="progressbar" style={{width: progress.current +'%'}} aria-valuenow={progress.current} aria-valuemin="0" aria-valuemax="100" />
+          <div className="progress-bar bg-warning" role="progressbar" style={{width: progress.current +'%'}} aria-valuenow={progress.current} aria-valuemin="0" aria-valuemax="100" />
+        </div>
+        <div className="farmCount">
+          <p>Farm Count: {progress.farmCount}</p>
+        </div>
       </div>
     );
   }
 }
 
 ProgressDisplay.propTypes = {
-  progress: PropTypes.number.isRequired,
+  progress: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
 
