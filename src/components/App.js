@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './common/Header';
 import HomePage from './Home/HomePage';
 import StatsPage from './Stats/StatsPage';
+import UpgradeTreePage from './UpgradeTree/UpgradeTreePage';
 import PatternLibraryPage from './PatternLibrary/PatternLibraryPage';
 
 class App extends React.Component {
@@ -21,6 +22,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/stats" component={StatsPage} />
+          <Route path="/upgrade-tree" component={UpgradeTreePage} />
           <Route path="/pattern-library" component={PatternLibraryPage} />
         </Switch>
         </div>

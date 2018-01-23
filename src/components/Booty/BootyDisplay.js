@@ -13,9 +13,6 @@ class BootyDisplay extends Component {
   render() {
     const bootyTotal = this.props.booty + this.props.farmCount;
 
-    console.log('booty updated');
-    // dispatch(incrementFarmCount());
-
     return (
       <div>
         <div className="card">

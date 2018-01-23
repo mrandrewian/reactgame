@@ -1,23 +1,63 @@
 @import "~bootstrap/scss/bootstrap";
 @import "overrides";
 
-.progressbar {
-  &.five { width: 5%;}
-  &.ten {}
-  &.fifteen {}
-  &.twenty {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
-  &.ten {}
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+
+// EXPIRAMENTAL
+
+.upgrade-tree-table {
+
+  tbody > tr > td {
+    width: 11.1111%;
+    position: relative;
+  }
+
+  button.vertical-join:before {
+    content: "";
+    display: table;
+    background: var(--primary);
+    width: 2px;
+    height: 1.5rem;
+    position: absolute;
+    top: -.75rem;
+  }
+
+  button.horizontal-join:before {
+    content: "";
+    display: table;
+    background: var(--primary);
+    width: 1.5rem;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+  }
+
+  .join-middle:before {
+    left: 50%;
+  }
+
+  .join-left:before {
+    left: 25%;
+  }
+
+  .join-right:before {
+    left: 75%;
+  }
+
+  .offshoot-left:before {
+    right: -.75rem;
+  }
+
+  .offshoot-right:before {
+    left: -.75rem;
+  }
+
 }

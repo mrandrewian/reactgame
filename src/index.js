@@ -5,16 +5,15 @@ import { AppContainer } from 'react-hot-loader';
 import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
 import {getHeroes} from './actions/heroesActions';
-import {updateProgress} from './actions/progressActions';
 import {startWorldTime} from './actions/worldTimeActions';
 import {getBooty} from './actions/bootyActions';
 import './styles/styles.scss';
+import './styles/rpg-awesome.min.css'
 require('./favicon.ico');
 
 const store = configureStore();
 store.dispatch(getHeroes());
 store.dispatch(startWorldTime());
-store.dispatch(updateProgress());
 store.dispatch(getBooty());
 
 render(

@@ -1,0 +1,30 @@
+"upgrades": {
+  "id": 0000,
+  "label": "Dual Wield",
+  "children": [
+    { "id": 0000, "label": "Tri Wield", "children": [
+      { "id": 0000, "label": "Foo", "children": [
+        { "id": 0000, "label": "Foo", "children": [
+          { "id": 0000, "label": "Foo", "children": [
+            { "id": 0000, "label": "Foo", "children": []}
+          ]},
+          { "id": 0000, "label": "Foo", "children": []}
+        ]},
+        { "id": 0000, "label": "Foo", "children": [
+          { "id": 0000, "label": "Foo", "children": [
+
+          ]},
+          { "id": 0000, "label": "Foo", "children": [
+
+          ]}
+        ]}
+      ]},
+      { "id": 0000, "label": "Bar", "children": [
+
+      ]}
+    ]}
+  ]
+};
+
+{ "id": 0000, "label": "Foo", "children": []}
+{ "id": 0000, "label": "Bar", "children": []}

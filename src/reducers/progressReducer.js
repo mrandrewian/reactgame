@@ -13,18 +13,10 @@ export default function progressReducer(state = initialState.progress, action) {
 
   switch(action.type) {
     case INCREMENT_PROGRESS:
-      if((state.current * 4) >= 100) {
-        return {
-          ...state,
-          current: 0,
-          farmCount: state.farmCount + 1
-        };
-      } else {
-        return {
-          ...state,
-          current: state.current + action.progress
-        };
-      }
+      return {
+        ...state,
+        current: state.current + action.progress
+      };
     case RESET_PROGRESS:
       return {
         ...state,

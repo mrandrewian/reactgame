@@ -7,6 +7,7 @@ import * as heroesActions from '../../actions/heroesActions';
 import BootyDisplay from '../Booty/BootyDisplay';
 import HeroesDisplay from '../Heroes/HeroesDisplay';
 import ProgressDisplay from '../Progress/ProgressDisplay';
+import FarmingInterface from '../Farming/FarmingInterface';
 
 class HomePage extends Component {
   constructor(props, context) {
@@ -24,6 +25,10 @@ class HomePage extends Component {
         <HeroesDisplay heroes={heroes} />
         <h1>Progress</h1>
         <ProgressDisplay />
+        <h1>Farming Interface</h1>
+        <div className="buttons">
+          <FarmingInterface />
+        </div>
       </div>
     );
   }

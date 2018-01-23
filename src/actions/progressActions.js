@@ -4,14 +4,25 @@ export function incrementProgress(progress, farmCount) {
   return {
     type: types.INCREMENT_PROGRESS,
     progress: progress,
-    farmCount: farmCount
+    farmCount
   };
+}
+
+export function updateProgress(progressIncrementAmount) {
+  return function(dispatch, getState){
+    if((getState().progress.current*4)>= 100) {
+      dispatch(resetProgress());
+      dispatch(incrementFarmCount());
+    } else {
+      dispatch(incrementProgress(progressIncrementAmount));
+    }
+  }
 }
 
 export function resetProgress(progress) {
   return {
     type: types.RESET_PROGRESS,
-    progress: progress
+    progress
   };
 }
 
@@ -60,15 +71,10 @@ export function incrementHero4Progress(progress) {
 }
 
 let timer = null;
-export function updateProgress() {
-  return function (dispatch, getState) {
-    if ((getState().progress.current*4) >= 100) {
-      dispatch(resetProgress());
-      dispatch(incrementFarmCount());
-    } else {
-      clearInterval(timer);
-      timer = setInterval(() =>
-      dispatch(incrementProgress(1)), 1000);
-    }
+export function startAutoIncrement(autoIncrementValue) {
+  return function (dispatch) {
+    clearInterval(timer);
+    timer = setInterval(() =>
+    dispatch(updateProgress(autoIncrementValue)), 1000);
   };
 }
