@@ -71,10 +71,12 @@ export function incrementHero4Progress(progress) {
 }
 
 let timer = null;
-export function startAutoIncrement(autoIncrementValue) {
+let updatedIncrementValue = 0;
+export function updateAutoIncrement(autoIncrementValue) {
   return function (dispatch) {
+    updatedIncrementValue += autoIncrementValue;
     clearInterval(timer);
     timer = setInterval(() =>
-    dispatch(updateProgress(autoIncrementValue)), 1000);
+    dispatch(updateProgress(updatedIncrementValue)), 1000);
   };
 }

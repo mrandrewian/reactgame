@@ -1,30 +1,95 @@
-"upgrades": {
-  "id": 0000,
-  "label": "Dual Wield",
-  "children": [
-    { "id": 0000, "label": "Tri Wield", "children": [
-      { "id": 0000, "label": "Foo", "children": [
-        { "id": 0000, "label": "Foo", "children": [
-          { "id": 0000, "label": "Foo", "children": [
-            { "id": 0000, "label": "Foo", "children": []}
-          ]},
-          { "id": 0000, "label": "Foo", "children": []}
-        ]},
-        { "id": 0000, "label": "Foo", "children": [
-          { "id": 0000, "label": "Foo", "children": [
-
-          ]},
-          { "id": 0000, "label": "Foo", "children": [
-
-          ]}
-        ]}
-      ]},
-      { "id": 0000, "label": "Bar", "children": [
-
-      ]}
-    ]}
+{ "upgradeTree" :
+  [
+    {
+      "id": "woodenClub",
+      "upgrade": "Wooden Club",
+      "preReqs": "none",
+      "cost": 1,
+      "multiplier": 1
+    },
+    {
+      "id": "sharpenedStick",
+      "upgrade": "Sharpened Stick",
+      "preReqs": "woodenClub",
+      "cost": 5,
+      "multiplier": 1
+    },
+    {
+      "id": "tebute",
+      "upgrade": "Tebute",
+      "preReqs": "woodenClub",
+      "cost": 5,
+      "multiplier": 3
+    },
+    {
+      "id": "woodenShield",
+      "upgrade": "Wooden Shield",
+      "preReqs": "woodenClub",
+      "cost": 5,
+      "multiplier": 3
+    },
+    {
+      "id": "spikedClub",
+      "upgrade": "Spiked Club",
+      "preReqs": "woodenClub",
+      "cost": 5,
+      "multiplier": 3
+    },
+    {
+      "id": "spear",
+      "upgrade": "Spear",
+      "preReqs": "sharpenedStick",
+      "cost": 15,
+      "multiplier": 5
+    },
+    {
+      "id": "bow",
+      "upgrade": "Bow",
+      "preReqs": "sharpenedStick",
+      "cost": 15,
+      "multiplier": 5
+    },
+    {
+      "id": "atlatl",
+      "upgrade": "Atlatl",
+      "preReqs": "spear",
+      "cost": 35,
+      "multiplier": 15
+    },
+    {
+      "id": "quiver",
+      "upgrade": "Quiver",
+      "preReqs": "bow",
+      "cost": 35,
+      "multiplier": 15
+    },
+    {
+      "id": "stoneTip",
+      "upgrade": "Stone Tips",
+      "preReqs": "woodenClub,spikedClub",
+      "cost": 70,
+      "multiplier": 20
+    },
+    {
+      "id": "copperSword",
+      "upgrade": "Copper Sword",
+      "preReqs": "tebute",
+      "cost": 150,
+      "multiplier": 35
+    },
+    {
+      "id": "bandedShield",
+      "upgrade": "Banded Shield",
+      "preReqs": "woodenShield",
+      "cost": 150,
+      "multiplier": 35
+    },
+    {
+      "id": "stoneAxe",
+      "upgrade": "Stone Axe",
+      "preReqs": "spikedClub",
+      "cost": 150,
+      "multiplier": 35
+    }
   ]
-};
-
-{ "id": 0000, "label": "Foo", "children": []}
-{ "id": 0000, "label": "Bar", "children": []}
+}

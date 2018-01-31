@@ -4,9 +4,9 @@ import ListGroupItem from './ListGroupItem';
 
 const ListGroup = ({upgrades = []}) => {
   return (
-    <ul className="list-group {listGroupType}">
+    <ul className="list-group">
       {upgrades.map(upgrade =>
-        <ListGroupItem upgrade={upgrade}/>
+        <ListGroupItem key={upgrade} upgrade={upgrade}/>
       )}
     </ul>
   );

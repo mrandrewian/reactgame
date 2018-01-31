@@ -1,5 +1,7 @@
 export default {
   heroes: [],
+  upgrades: [],
+  upgradeTree: [],
   progress: {
     current: 0,
     farmCount: 0

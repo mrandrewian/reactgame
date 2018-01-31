@@ -34,7 +34,7 @@ const schema = {
               "Warrior",
               "Mage",
               "Healer",
-              "Assassin"
+              "Ranger"
             ]
           },
           "power": {
