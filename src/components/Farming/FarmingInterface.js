@@ -13,11 +13,11 @@ class FarmingInterface extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.updateProgress = this.updateProgress.bind(this);
+    this.incrementProgress = this.incrementProgress.bind(this);
     this.specUpgrade = this.specUpgrade.bind(this);
   }
 
-  updateProgress() {
+  incrementProgress() {
     event.preventDefault();
     this.props.progressActions.updateProgress(20);
   }
@@ -37,7 +37,7 @@ class FarmingInterface extends Component {
               <ThresholdButton
                 id={upgrade.id}
                 multiplier={upgrade.multiplier}
-                btnTypes="btn btn-warning btn-large"
+                btnTypes="m-1 btn btn-secondary btn-lg"
                 btnLabel={upgrade.upgrade}
                 onClick={this.specUpgrade}
                 preReqs={upgrade.preReqs.split(',')}
@@ -48,9 +48,9 @@ class FarmingInterface extends Component {
             )}
         </div>
         <Button
-          btnTypes="btn btn-primary btn-large"
+          btnTypes="m-1 btn btn-info btn-large"
           btnLabel="Fight!"
-          onClick={this.updateProgress}
+          onClick={this.incrementProgress}
         />
         <div className="enabled-upgrades">
           <h1>Enabled upgrades</h1>

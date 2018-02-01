@@ -1,0 +1,14 @@
+.hero-display {
+  .col:nth-child(1) .card-header {
+    background: $hero1-color;
+  }
+  .col:nth-child(2) .card-header {
+    background: $hero2-color;
+  }
+  .col:nth-child(3) .card-header {
+    background: $hero3-color;
+  }
+  .col:nth-child(4) .card-header {
+    background: $hero4-color;
+  }
+}

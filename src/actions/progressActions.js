@@ -1,22 +1,37 @@
 import * as types from '../constants/actionTypes';
 
-export function incrementProgress(progress, farmCount) {
-  return {
-    type: types.INCREMENT_PROGRESS,
-    progress: progress,
-    farmCount
-  };
+export function checkHeroLimit(heroTotal, farmCount) {
+  return (heroTotal >= farmCount * 100);
+}
+
+export function checkCurrentLimit(current) {
+  return current >= 100;
 }
 
 export function updateProgress(progressIncrementAmount) {
   return function(dispatch, getState){
-    if((getState().progress.current*4)>= 100) {
+    const hero1 = getState().progress.hero1;
+    const hero2 = getState().progress.hero2;
+    const hero3 = getState().progress.hero3;
+    const hero4 = getState().progress.hero4;
+    const heroTotal = hero1 + hero1 + hero3 + hero4;
+    const farmCount = getState().progress.farmCount;
+    const current = getState().progress.farmCount;
+    if(checkHeroLimit(heroTotal, farmCount) || checkCurrentLimit(current)) {
       dispatch(resetProgress());
       dispatch(incrementFarmCount());
     } else {
       dispatch(incrementProgress(progressIncrementAmount));
     }
   }
+}
+
+export function tickProgress(progress, farmCount) {
+  return {
+    type: types.TICK_PROGRESS,
+    progress: progress,
+    farmCount
+  };
 }
 
 export function resetProgress(progress) {
@@ -35,38 +50,44 @@ export function incrementFarmCount(farmCount) {
 
 //TODO: Update progress to indicate for each hero
 
-// export function incrementProgress(progress) {
-//   incrementHero1Progress(7);
-//   incrementHero1Progress(12);
-//   incrementHero1Progress(8);
-//   incrementHero1Progress(11);
-// }
+export function incrementProgress(progress, farmCount) {
+  return function(dispatch, getState){
+    dispatch(incrementHero1Progress(7));
+    dispatch(incrementHero2Progress(12));
+    dispatch(incrementHero3Progress(8));
+    dispatch(incrementHero4Progress(11));
+  }
+}
 
-export function incrementHero1Progress(progress) {
+export function incrementHero1Progress(progress, farmCount) {
   return {
     type: types.INCREMENT_HERO1_PROGRESS,
-    hero1Progress: progress
+    progress,
+    farmCount
   };
 }
 
-export function incrementHero2Progress(progress) {
+export function incrementHero2Progress(progress, farmCount) {
   return {
     type: types.INCREMENT_HERO2_PROGRESS,
-    hero2Progress: progress
+    progress,
+    farmCount
   };
 }
 
-export function incrementHero3Progress(progress) {
+export function incrementHero3Progress(progress, farmCount) {
   return {
     type: types.INCREMENT_HERO3_PROGRESS,
-    hero3Progress: progress
+    progress,
+    farmCount
   };
 }
 
-export function incrementHero4Progress(progress) {
+export function incrementHero4Progress(progress, farmCount) {
   return {
     type: types.INCREMENT_HERO4_PROGRESS,
-    hero4Progress: progress
+    progress,
+    farmCount
   };
 }
 
@@ -77,6 +98,6 @@ export function updateAutoIncrement(autoIncrementValue) {
     updatedIncrementValue += autoIncrementValue;
     clearInterval(timer);
     timer = setInterval(() =>
-    dispatch(updateProgress(updatedIncrementValue)), 1000);
+    dispatch(tickProgress(updatedIncrementValue)), 1000);
   };
 }

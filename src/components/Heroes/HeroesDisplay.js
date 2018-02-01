@@ -4,9 +4,13 @@ import HeroDisplayCard from './HeroesDisplayCard';
 
 const HeroesDisplay = ({heroes}) => {
   return (
-    <div className="row">
-      {heroes.map(hero =>
-        <HeroDisplayCard key={hero.id} hero={hero}/>
+    <div className="hero-display row">
+      {heroes.map((hero, index) =>
+        <HeroDisplayCard
+          index={index}
+          key={hero.id}
+          hero={hero}
+        />
       )}
     </div>
   );

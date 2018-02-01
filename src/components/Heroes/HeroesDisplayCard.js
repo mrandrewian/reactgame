@@ -2,15 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const HeroesDisplayCard = ({hero}) => {
-  if (hero.class == "Warrior") {
-    const {heroIcon} = "<i className='ra ra-axe ra-fw'></i>";
-  } else if (hero.class == "Mage") {
-    const {heroIcon} = "<i className='ra ra-fairy-wand ra-fw'></i>";
-  } else if (hero.class == "Healer") {
-    const {heroIcon} = "<i className='ra ra-health ra-fw'></i>";
-  } else if (hero.class == "Assassin") {
-    const {heroIcon} = "<i className='ra ra-daggers ra-fw'></i>";
-  }
   return (
     <div className="col">
       <div className="card">

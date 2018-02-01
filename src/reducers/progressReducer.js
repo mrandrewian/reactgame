@@ -5,14 +5,15 @@ import {
   INCREMENT_HERO1_PROGRESS,
   INCREMENT_HERO2_PROGRESS,
   INCREMENT_HERO3_PROGRESS,
-  INCREMENT_HERO4_PROGRESS
+  INCREMENT_HERO4_PROGRESS,
+  TICK_PROGRESS
 } from '../constants/actionTypes';
 import initialState from './initialState';
 
 export default function progressReducer(state = initialState.progress, action) {
 
   switch(action.type) {
-    case INCREMENT_PROGRESS:
+    case TICK_PROGRESS:
       return {
         ...state,
         current: state.current + action.progress
@@ -20,7 +21,11 @@ export default function progressReducer(state = initialState.progress, action) {
     case RESET_PROGRESS:
       return {
         ...state,
-        current: 0
+        current: 0,
+        hero1: 0,
+        hero2: 0,
+        hero3: 0,
+        hero4: 0
       };
     case INCREMENT_FARMCOUNT:
       return {
@@ -28,29 +33,25 @@ export default function progressReducer(state = initialState.progress, action) {
         farmCount: state.farmCount + 1
       };
     case INCREMENT_HERO1_PROGRESS:
-      if(state >= 100) {
-        return state = 0;
-      } else {
-        return state + action.hero1Progress;
-      }
+      return {
+        ...state,
+        hero1: state.hero1 + action.progress
+      };
     case INCREMENT_HERO2_PROGRESS:
-      if(state >= 100) {
-        return state = 0;
-      } else {
-        return state + action.hero2Progress;
-      }
+      return {
+        ...state,
+        hero2: state.hero2 + action.progress
+      };
     case INCREMENT_HERO3_PROGRESS:
-      if(state >= 100) {
-        return state = 0;
-      } else {
-        return state + action.hero3Progress;
-      }
+      return {
+        ...state,
+        hero3: state.hero3 + action.progress
+      };
     case INCREMENT_HERO4_PROGRESS:
-      if(state >= 100) {
-        return state = 0;
-      } else {
-        return state + action.hero4Progress;
-      }
+      return {
+        ...state,
+        hero4: state.hero4 + action.progress
+      };
     default:
       return state;
   }
